@@ -60,6 +60,13 @@ section {
 .gallery img {
     width: 100%;
     border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
 }
 
 .services {
@@ -93,7 +100,29 @@ footer {
 }
 </style>
 </head>
+<footer>
+    <p>© 2026 Shutterfly Studio</p>
+</footer>
 
+<!-- 👇 PASTE HERE START -->
+<div id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+</div>
+
+<script>
+function openImage(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+
+function closeImage() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+<!-- 👆 PASTE HERE END -->
+
+</body>
+</html>
 <body>
 
 <nav>
@@ -124,6 +153,7 @@ footer {
         <img src="WhatsApp Image 2026-03-26 at 10.24.09 PM.jpeg" onclick="openImage(this.src)">
     </div>
 </section>
+    
 <section id="services">
     <h2>Services</h2>
     <div class="services">
