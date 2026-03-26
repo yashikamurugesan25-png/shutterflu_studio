@@ -15,9 +15,11 @@ body {
     color: white;
 }
 
+/* HEADER */
 header {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url('images/background.jpeg');    background-size: cover;
+                url('images/background.jpeg');
+    background-size: cover;
     background-position: center;
     height: 90vh;
     display: flex;
@@ -32,6 +34,7 @@ header p {
     font-size: 20px;
 }
 
+/* NAV */
 nav {
     position: fixed;
     width: 100%;
@@ -46,11 +49,13 @@ nav a {
     text-decoration: none;
 }
 
+/* SECTIONS */
 section {
     padding: 60px 20px;
     text-align: center;
 }
 
+/* GALLERY */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -67,8 +72,8 @@ section {
 .gallery img:hover {
     transform: scale(1.05);
 }
-}
 
+/* SERVICES */
 .services {
     display: flex;
     flex-wrap: wrap;
@@ -83,6 +88,7 @@ section {
     border-radius: 10px;
 }
 
+/* BUTTON */
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -93,6 +99,26 @@ section {
     margin-top: 20px;
 }
 
+/* LIGHTBOX */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+/* FOOTER */
 footer {
     background: black;
     padding: 20px;
@@ -100,11 +126,81 @@ footer {
 }
 </style>
 </head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HEADER -->
+<header>
+    <h1>Shutterfly Studio</h1>
+    <p>Photography by Ajay Kumar</p>
+    <a class="btn" href="#contact">Book Now</a>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>Capturing timeless memories with creativity and passion.</p>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2>Captured Events</h2>
+
+    <div class="gallery">
+        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM (1).jpeg" onclick="openImage(this.src)">
+        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM (2).jpeg" onclick="openImage(this.src)">
+        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM.jpeg" onclick="openImage(this.src)">
+        <img src="WhatsApp Image 2026-03-26 at 10.24.09 PM.jpeg" onclick="openImage(this.src)">
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Services</h2>
+    <div class="services">
+        <div class="card">Wedding Photography</div>
+        <div class="card">Baby Shoot</div>
+        <div class="card">Baby Shower</div>
+        <div class="card">Corporate Events</div>
+        <div class="card">Pre-Wedding Shoot</div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+
+    <p><b>Ajay Kumar</b></p>
+    <p>Email: your@email.com</p>
+    <p>Phone: +91 8072249877</p>
+    <p><b>Location:</b> Salem, Tamil Nadu</p>
+
+    <a class="btn" href="https://wa.me/918072249877" target="_blank">
+        WhatsApp Now
+    </a>
+
+    <br><br>
+
+    <p>Follow us on Instagram:</p>
+    <a class="btn" href="https://www.instagram.com/shutterfly_studios_by_phoenix?igsh=MTB1ZXpuNWdjYjAwbA==" target="_blank">
+        @Shutterfly_Studios
+    </a>
+</section>
+
+<!-- FOOTER -->
 <footer>
     <p>© 2026 Shutterfly Studio</p>
 </footer>
 
-<!-- 👇 PASTE HERE START -->
+<!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeImage()">
     <img id="lightbox-img">
 </div>
@@ -119,76 +215,6 @@ function closeImage() {
     document.getElementById("lightbox").style.display = "none";
 }
 </script>
-<!-- 👆 PASTE HERE END -->
-
-</body>
-</html>
-<body>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<header>
-    <h1>Shutterflu Studio</h1>
-    <p>Photography by Ajay Kumar</p>
-    <a class="btn" href="#contact">Book Now</a>
-</header>
-
-<section id="about">
-    <h2>About Us</h2>
-    <p>Capturing timeless memories with creativity and passion.</p>
-</section>
-
-<section id="gallery">
-    <h2>Captured Events</h2>
-
-    <div class="gallery">
-        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM (1).jpeg" onclick="openImage(this.src)">
-        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM (2).jpeg" onclick="openImage(this.src)">
-        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM.jpeg" onclick="openImage(this.src)">
-        <img src="WhatsApp Image 2026-03-26 at 10.24.09 PM.jpeg" onclick="openImage(this.src)">
-    </div>
-</section>
-    
-<section id="services">
-    <h2>Services</h2>
-    <div class="services">
-        <div class="card">Wedding Photography</div>
-        <div class="card">Baby Shoot</div>
-        <div class="card">Baby Shower</div>
-        <div class="card">Corporate Events</div>
-        <div class="card">Pre-Wedding Shoot</div>
-    </div>
-</section>
-<section id="contact">
-    <h2>Contact</h2>
-
-    <p><b>Ajay Kumar</b></p>
-    <p>Email: your@email.com</p>
-    <p>Phone: +91 8072249877</p>
-    <p><b>Location:</b> Salem, Tamil Nadu</p>
-
-    <br>
-
-    <a class="btn" href="https://wa.me/918072249877" target="_blank">
-        WhatsApp Now
-    </a>
-
-    <br><br>
-
-    <p>Follow us on Instagram:</p>
-    <a class="btn" href="https://www.instagram.com/shutterfly_studios_by_phoenix?igsh=MTB1ZXpuNWdjYjAwbA==" target="_blank">
-        @Shutterfly_Studios
-    </a>
-</section>
-
-<footer>
-    <p>© 2026 Shutterfly Studio</p>
-</footer>
 
 </body>
 </html>
