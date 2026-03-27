@@ -10,6 +10,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -33,7 +37,6 @@ nav a {
     margin: 15px;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.3s;
 }
 
 nav a:hover {
@@ -43,7 +46,7 @@ nav a:hover {
 /* HEADER */
 header {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-            url('background1.jpeg');
+    url('background1.jpeg');
     background-size: cover;
     background-position: center;
     height: 90vh;
@@ -56,18 +59,22 @@ header {
 
 header h1 {
     font-size: 60px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
 }
 
 header p {
     font-size: 20px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 /* SECTIONS */
 section {
     padding: 60px 20px;
     text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ABOUT */
@@ -77,14 +84,6 @@ section {
     background: #1a1a1a;
     padding: 30px;
     border-radius: 12px;
-    border: 1px solid rgba(212,175,55,0.2);
-}
-
-.about-text {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 15px;
-    color: #ddd;
 }
 
 /* GALLERY */
@@ -98,15 +97,14 @@ section {
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 .gallery img:hover {
     transform: scale(1.05);
-    filter: brightness(80%);
 }
 
-/* SERVICES */
+/* CARDS */
 .services {
     display: flex;
     flex-wrap: wrap;
@@ -119,129 +117,79 @@ section {
     padding: 20px;
     width: 220px;
     border-radius: 10px;
-    transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    border: 1px solid #d4af37;
-}
-
-/* BUTTONS */
+/* BUTTON */
 .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
     padding: 12px 20px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.3s;
 }
 
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* WhatsApp */
 .whatsapp {
     background: #25D366;
     color: white;
 }
 
-/* Instagram */
 .instagram {
     background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
     color: white;
 }
 
-/* CONTACT BUTTONS */
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* CONTACT TEXT */
-#contact p {
-    margin: 8px 0;
-    color: #ccc;
-}
-
-/* LIGHTBOX */
-#lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* CONTACT FORM */
+form input, form textarea {
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-#lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
 }
 
 /* FOOTER */
 footer {
     background: black;
     padding: 20px;
-    text-align: center;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
     <a href="#about">About</a>
     <a href="#gallery">Gallery</a>
     <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
 </nav>
 
+<!-- HEADER -->
 <header>
     <h1>Shutterflu Studio</h1>
     <p>Capturing moments that last forever</p>
-    <a class="btn whatsapp" href="#contact">Book Now</a>
 </header>
 
+<!-- ABOUT -->
 <section id="about">
     <h2>About Us</h2>
-
     <div class="about-container">
-        <p class="about-text">
-            At <b>Shutterflu Studio</b>, we believe every moment tells a story worth preserving. 
-            Led by <b>Ajay Kumar</b>, we capture emotions, expressions, and timeless memories.
-        </p>
-
-        <p class="about-text">
-            From weddings to baby shoots, baby showers, and corporate events, we deliver high-quality visuals.
-        </p>
-
-        <p class="about-text">
-            Our goal is natural, candid, and beautifully composed photography.
-        </p>
+        <p>At Shutterflu Studio, we capture emotions and memories with creativity and passion.</p>
     </div>
 </section>
 
+<!-- GALLERY -->
 <section id="gallery">
-    <h2>Captured Events</h2>
-
+    <h2>Gallery</h2>
     <div class="gallery">
-        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM (1).jpeg" onclick="openImage(this.src)">
-        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM (2).jpeg" onclick="openImage(this.src)">
-        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM.jpeg" onclick="openImage(this.src)">
-        <img src="WhatsApp Image 2026-03-26 at 10.24.09 PM.jpeg" onclick="openImage(this.src)">
+        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM (1).jpeg">
+        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM (2).jpeg">
+        <img src="WhatsApp Image 2026-03-26 at 10.24.08 PM.jpeg">
+        <img src="WhatsApp Image 2026-03-26 at 10.24.09 PM.jpeg">
     </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services">
     <h2>Services</h2>
     <div class="services">
@@ -249,51 +197,60 @@ footer {
         <div class="card">Baby Shoot</div>
         <div class="card">Baby Shower</div>
         <div class="card">Corporate Events</div>
-        <div class="card">Pre-Wedding Shoot</div>
     </div>
 </section>
 
+<!-- PRICING -->
+<section id="pricing">
+    <h2>Pricing</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Basic</h3>
+            <p>₹5,000</p>
+        </div>
+        <div class="card">
+            <h3>Standard</h3>
+            <p>₹10,000</p>
+        </div>
+        <div class="card">
+            <h3>Premium</h3>
+            <p>₹20,000</p>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="services">
+        <div class="card">"Amazing work!"</div>
+        <div class="card">"Highly professional."</div>
+        <div class="card">"Great experience."</div>
+    </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
-    <h2>Contact</h2>
+    <h2>Contact / Booking</h2>
 
-    <p><b>Ajay Kumar</b></p>
-    <p>Email: shutterflustudio@gmail.com</p>
-    <p>Phone: +91 8072249877</p>
-    <p><b>Location:</b> Salem, Tamil Nadu</p>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="event" placeholder="Event Type">
+        <textarea name="message" placeholder="Message"></textarea>
+        <button type="submit" class="btn whatsapp">Send</button>
+    </form>
 
-    <div class="contact-buttons">
-        <a class="btn whatsapp"
-           href="https://wa.me/918072249877?text=Hi%20Ajay,%20I%20am%20interested%20in%20your%20photography%20services."
-           target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
+    <br>
 
-        <a class="btn instagram"
-           href="https://www.instagram.com/shutterfly_studios_by_phoenix?igsh=MTB1ZXpuNWdjYjAwbA=="
-           target="_blank">
-            <i class="fa-brands fa-instagram"></i> Instagram
-        </a>
-    </div>
+    <a class="btn whatsapp" href="https://wa.me/918072249877" target="_blank">WhatsApp</a>
+    <a class="btn instagram" href="https://www.instagram.com/shutterfly_studios_by_phoenix" target="_blank">Instagram</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 Shutterflu Studio | All Rights Reserved</p>
+    <p>© 2026 Shutterflu Studio</p>
 </footer>
-
-<div id="lightbox" onclick="closeImage()">
-    <img id="lightbox-img">
-</div>
-
-<script>
-function openImage(src) {
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightbox-img").src = src;
-}
-
-function closeImage() {
-    document.getElementById("lightbox").style.display = "none";
-}
-</script>
 
 </body>
 </html>
